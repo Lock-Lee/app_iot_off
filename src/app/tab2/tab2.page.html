@@ -1,0 +1,199 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>ให้น้ำ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">ให้น้ำ</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br>
+  
+  <div class="container">
+    <div class="card">
+      <div
+        style="border: 1px solid #fafafa; padding: 10px"
+        (click)="fullTime1.open()"
+      >
+        <input
+          matInput
+          [ngxTimepicker]="fullTime1"
+          [format]="24"
+          readonly
+          [hidden]="'true'"
+          #time1
+        />
+      
+        <ngx-material-timepicker
+          #fullTime1
+          (timeSet)="timeSet('water1', $event)"
+        ></ngx-material-timepicker>
+        <h1>{{time1.value ? time1.value : '00:00'}}</h1>
+        <p>ช่วงเวลาที่ 1 (เปิด)</p>
+      </div>
+      <div
+        style="border: 1px solid #fafafa; padding: 10px"
+        (click)="fullTime2.open()"
+      >
+        <input
+          matInput
+          [ngxTimepicker]="fullTime2"
+          [format]="24"
+          readonly
+          [hidden]="'true'"
+          #time2
+        />
+        <ngx-material-timepicker
+          #fullTime2
+          (timeSet)="timeSet('water2', $event)"
+        ></ngx-material-timepicker>
+        <h1>{{time2.value ? time2.value : '00:00'}}</h1>
+        <p>ช่วงเวลาที่ 1 (ปิด)</p>
+      </div>
+    </div>
+  
+<br>
+
+
+<div class="card">
+    <div
+      style="border: 1px solid #fafafa; padding: 10px"
+      (click)="fullTime3.open()"
+      class="mt-3"
+    >
+      <input
+        matInput
+        [ngxTimepicker]="fullTime3"
+        [format]="24"
+        readonly
+        [hidden]="'true'"
+        #time3
+      />
+      <ngx-material-timepicker
+        #fullTime3
+        (timeSet)="timeSet('water3', $event)"
+      ></ngx-material-timepicker>
+      <h1>{{time3.value ? time3.value : '00:00'}}</h1>
+      <p>ช่วงเวลาที่ 2 (เปิด)</p>
+    </div>
+
+    <div
+      style="border: 1px solid #fafafa; padding: 10px"
+      (click)="fullTime4.open()"
+    >
+      <input
+        matInput
+        [ngxTimepicker]="fullTime4"
+        [format]="24"
+        readonly
+        [hidden]="'true'"
+        #time4
+      />
+      <ngx-material-timepicker
+        #fullTime4
+        (timeSet)="timeSet('water4', $event)"
+      ></ngx-material-timepicker>
+      <h1>{{time4.value ? time4.value : '00:00'}}</h1>
+      <p>ช่วงเวลาที่ 2 (ปิด)</p>
+    </div>
+  </div>
+
+  <br>
+
+  
+  <div class="card">
+    <div
+      style="border: 1px solid #fafafa; padding: 10px"
+      (click)="fullTime5.open()"
+      class="mt-3"
+    >
+      <input
+        matInput
+        [ngxTimepicker]="fullTime5"
+        [format]="24"
+        readonly
+        [hidden]="'true'"
+        #time5
+      />
+      <ngx-material-timepicker
+        #fullTime5
+        (timeSet)="timeSet('water5', $event)"
+      ></ngx-material-timepicker>
+      <h1>{{time5.value ? time5.value : '00:00'}}</h1>
+      <p>ช่วงเวลาที่ 3 (เปิด)</p>
+    </div>
+
+    <div
+      style="border: 1px solid #fafafa; padding: 10px"
+      (click)="fullTime6.open()"
+    >
+      <input
+        matInput
+        [ngxTimepicker]="fullTime6"
+        [format]="24"
+        readonly
+        [hidden]="'true'"
+        #time6
+      />
+      <ngx-material-timepicker
+        #fullTime6
+        (timeSet)="timeSet('water6', $event)"
+      ></ngx-material-timepicker>
+      <h1>{{time6.value ? time6.value : '00:00'}}</h1>
+      <p>ช่วงเวลาที่ 3 (ปิด)</p>
+    </div>
+  </div>
+
+  <br>
+
+  
+  <div class="card">
+    <div
+      style="border: 1px solid #fafafa; padding: 10px"
+      (click)="fullTime7.open()"
+      class="mt-3"
+    >
+      <input
+        matInput
+        [ngxTimepicker]="fullTime7"
+        [format]="24"
+        readonly
+        [hidden]="'true'"
+        #time7
+      />
+      <ngx-material-timepicker
+        #fullTime7
+        (timeSet)="timeSet('water7', $event)"
+      ></ngx-material-timepicker>
+      <h1>{{time7.value ? time7.value : '00:00'}}</h1>
+      <p>ช่วงเวลาที่ 4 (เปิด)</p>
+    </div>
+
+    <div
+      style="border: 1px solid #fafafa; padding: 10px"
+      (click)="fullTime8.open()"
+    >
+      <input
+        matInput
+        [ngxTimepicker]="fullTime8"
+        [format]="24"
+        readonly
+        [hidden]="'true'"
+        #time8
+      />
+      <ngx-material-timepicker
+        #fullTime8
+        (timeSet)="timeSet('water8', $event)"
+      ></ngx-material-timepicker>
+      <h1>{{time8.value ? time8.value : '00:00'}}</h1>
+      <p>ช่วงเวลาที่ 4 (ปิด)</p>
+    </div>
+    </div>
+  
+</div>
+  <br>
+  
+</ion-content>

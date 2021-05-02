@@ -1,0 +1,107 @@
+<div>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align:center;"> Dashboard </ion-title>
+  
+  </ion-toolbar>
+</ion-header>
+</div>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">Dashboard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br>
+  <div style="padding-right: 2%;">
+    <div style="text-align:right;">
+      <mat-slide-toggle (change)="onChange($event)">
+        {{status}}
+       </mat-slide-toggle>
+    </div>
+  </div>
+ 
+  <div class="text-center mt-4 mb-4">
+    <ngx-gauge
+      [type]="'arch'"
+      [value]="tempShow"
+      [label]="'PH'"
+      [append]="''"
+      [size]="'200'"
+      [cap]="'round'"
+      [thick]="'8'"
+    >
+    </ngx-gauge>
+  </div>
+
+  <div class="text-center">
+    <ngx-gauge
+      [type]="'arch'"
+      [value]="humiShow"
+      [label]="'ความชื้น'"
+      [append]="'%'"
+      [size]="'200'"
+      [cap]="'round'"
+      [thick]="'8'"
+    >
+    </ngx-gauge>
+  </div>
+
+  <ion-item lines="none">
+    <ion-range
+      dual-knobs
+      pin
+      color="danger"
+      [(ngModel)]="phSetting"
+      min="1"
+      max="9"
+      (ionChange)="phChange()"
+    >
+      <ion-icon slot="start" size="small" name="thermometer"></ion-icon>
+      <ion-icon slot="end" name="thermometer"></ion-icon>
+    </ion-range>
+  </ion-item>
+  <p style="padding-left: 30px">
+    {{ 'PH ' + phSetting.lower + '.0 ถึง ' + phSetting.upper + '.0'}}
+  </p>
+
+  <ion-item lines="none">
+    <ion-range
+      dual-knobs
+      pin
+      color="primary"
+      [(ngModel)]="humiSetting"
+      min="1"
+      max="100"
+      (ionChange)="humiChange()"
+    >
+      <ion-icon slot="start" size="small" name="sunny"></ion-icon>
+      <ion-icon slot="end" name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item>
+  <p style="padding-left: 30px" class="mb-3">
+    {{ 'ความชื้น ' + humiSetting.lower + ' ถึง ' + humiSetting.upper + ''}}
+  </p>
+  <!-- <div class="row mt-4">
+    <div class="col-6">
+    
+    </div>
+    <div class="col-6">
+      <div class="text-center">
+   
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div style="display: block" class="mt-3">
+    <canvas
+      baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [chartType]="barChartType"
+    >
+    </canvas>
+  </div> -->
+</ion-content>
